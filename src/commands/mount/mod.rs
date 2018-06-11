@@ -1,4 +1,3 @@
-use structopt::StructOpt;
 use super::Executor;
 use std::io;
 

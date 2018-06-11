@@ -7,26 +7,20 @@ use std::io;
 pub mod commands;
 use commands::{ mount };
 
+#[macro_use]
+mod utils;
+
 #[derive(StructOpt, Debug)]
 #[structopt(name = "workspace")]
 struct Workspace {
     #[structopt(subcommand)]
-    command: Command
+    command: Commands
 }
 
-#[derive(StructOpt, Debug)]
-enum Command {
+subcommands! {
     /// Mount a remote workspace
     #[structopt(name = "mount")]
     Mount(mount::Command)
-}
-
-impl Executor for Command {
-    fn execute (&self) -> io::Result<()> {
-        match *self {
-            Command::Mount(_) => unimplemented!()
-        }
-    }
 }
 
 pub trait Executor {
