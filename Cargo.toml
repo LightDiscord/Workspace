@@ -1,0 +1,9 @@
+[package]
+name = "workspace"
+description = "A workspace manager"
+version = "0.1.0"
+authors = ["LightDiscord <arnaud@lightdiscord.me>"]
+repository = "https://github.com/LightDiscord/Workspace"
+license = "MIT"
+
+[dependencies]
